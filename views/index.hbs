@@ -1,0 +1,52 @@
+{{#if genStr }}
+<div class="input-group mb-2 justify-content-center">
+  <div class="input-group mb-3 justify-content-center">
+    <img class="rounded"
+      src="https://assets-lighthouse.alphacamp.co/uploads/image/file/16716/ExportedContentImage_00.png"
+      alt="url shortener" />
+  </div>
+  <div class="position-relative m-2">
+    <div class="col-auto mr-auto">
+      <div class="card-columns justify-content-center">
+        <h4>Success! Please use this link:</h4>
+        <p id="shortURL">{{origin}}/{{genStr}}</p>
+        <button class="btn btn-primary position-absolute bottom-20 end-50" onclick="copy()">Copy</button>
+
+        <script>
+          function copy() {
+            const URL = document.getElementById("shortURL")
+            navigator.clipboard.writeText(URL.innerText)
+              .then(() => alert('copied'))
+              .catch(error => console.log(error))
+          }
+        </script>
+        
+        <form action="/">
+          <button class="btn btn-outline-danger position-absolute bottom-20 start-50" type="submit">重新輸入</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{{else}}
+<div class="input-group mb-2 justify-content-center">
+  <div class="input-group mb-3 justify-content-center">
+    <img class="rounded"
+      src="https://assets-lighthouse.alphacamp.co/uploads/image/file/16716/ExportedContentImage_00.png"
+      alt="url shortener" />
+  </div>
+  <div class="position-relative m-2">
+    <div class="col-auto mr-auto">
+      <div class="card-columns justify-content-center">
+        <form action="/" method="POST">
+          <input type="text" name="oriurl" id="oriurl" placeholder="Input original URL here" value="" required>
+          <p></p>
+          <button class="btn btn-primary position-absolute bottom-20 end-50" type="submit"
+            style="vertical-align: center;">Shorten</button>
+          <button class="btn btn-outline-danger position-absolute bottom-20 start-50" type="reset">重新輸入</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{{/if}}
