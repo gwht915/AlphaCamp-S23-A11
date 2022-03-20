@@ -8,7 +8,7 @@
 ## 專案畫面
 
    - 主畫面
-      ![image](https://github.com/gwht915/AlphaCamp-S23-A11/blob/main/images/S2-3-A8-1.png)
+      ![image](https://github.com/gwht915/AlphaCamp-S23-A11/blob/main/images/S23-A11.png)
 
    
 ## Features - 功能
