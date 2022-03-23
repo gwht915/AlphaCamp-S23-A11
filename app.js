@@ -55,30 +55,12 @@ app.post('/', (req, res) => {
       })
           .catch(error => console.log(error))
       }
-      // return Url.findOne({ oriUrl: sOriUrl })
-      //   .then(urls => {
-      //     urls.genStr = ranStr
-      //     return urls.save()
-      //   })
-      //   .then(() => res.redirect('/'))
-      //   .catch(error => console.log(error))
-      //}
     })
 })
 
-app.post("/copy", (req, res) => {
-     const URL = document.getElementById("shortURL")
-     console.log('URL')
-     navigator.clipboard.writeText(URL.innerText)
-       .then(() => alert('copied'))
-       .catch(error => console.log(error))
-     
-  })
-
 app.get("/:shortUrl", (req, res) => {
   const params = req.params.shortUrl
-  //console.log('params: ', params)
-
+  
   Url.findOne({ shortUrl: params })
     .then(data => {
       //console.log('oriUrl: ', data.oriUrl)
